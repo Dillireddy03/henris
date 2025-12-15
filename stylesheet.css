@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+   background-color: rgb(209, 214, 219);
+   font-family: sans-serif;
+   overflow-x: hidden;
+}
+.home{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+    background-color: white;
+    height: 50px ;
+}
+.logo{
+    align-content: center;
+}
+.logo-image{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    transition: transform 0.25s ease;
+}
+.logo-image:hover{
+    transform: scale(1.2);
+}
+.nav{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav a {
+    text-decoration: none;
+    color: rgb(145, 140, 134);
+}
+.nav a:hover{
+    color: black;
+}
+.contros{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.contros a{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    align-content: center;
+    transition: all 0.3s ease;
+}
+.contros a:hover{
+    transform: translateY(-10px);
+}
+.on{
+    width: 50%;
+    height: 700px;
+    
+}
+.tw{
+    width: 50%;
+    height: 700px;
+}
+/* =========================
+   HERO IMAGE SECTION
+========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   CENTERED TEXT OVER IMAGE
+========================= */
+
+.item_sequence {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Each slide */
+.item {
+    position: absolute;
+    opacity: 0;
+    animation: textLoop 9s infinite;
+}
+
+/* Delay for loop effect */
+.item:nth-child(1) { animation-delay: 0s; }
+.item:nth-child(2) { animation-delay: 3s; }
+.item:nth-child(3) { animation-delay: 6s; }
+
+/* Text styling */
+.main.title {
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #ff1f1f;
+}
+
+/* =========================
+   LOOP ANIMATION
+========================= */
+
+@keyframes textLoop {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* =========================
+   HERO IMAGE ANIMATION
+========================= */
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    /* fixed opacity */
+    opacity: 0.5;
+
+    /* brightness animation */
+    filter: brightness(30%);
+    animation: brightnessPulse 6s ease-in-out infinite;
+}
+
+/* =========================
+   BRIGHTNESS LOOP
+========================= */
+
+@keyframes brightnessPulse {
+    0% {
+        filter: brightness(30%);
+    }
+    50% {
+        filter: brightness(100%);
+    }
+    100% {
+        filter: brightness(30%);
+    }
+}
